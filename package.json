@@ -1,0 +1,59 @@
+{
+  "name": "gmol",
+  "version": "1.0.0",
+  "description": "Library for calcuating the molar mass of chemical compounds.",
+  "homepage": "https://github.com/jonreiland/gmol#readme",
+  "bugs": {
+    "url": "https://github.com/jonreiland/gmol/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonreiland/gmol.git"
+  },
+  "license": "MIT",
+  "author": "Jon Reiland",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.mjs"
+    },
+    "./cli": {
+      "import": "./dist/cli.mjs",
+      "require": "./dist/cli.cjs"
+    }
+  },
+  "bin": {
+    "gmol": "./dist/cli.cjs"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@types/commander": "^2.12.5",
+    "@types/node": "^24.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "eslint": "^9.35.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "commander": "^14.0.0"
+  }
+}
