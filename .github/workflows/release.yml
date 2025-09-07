@@ -35,7 +35,7 @@ jobs:
 
       - name: Publish to GitHub Packages
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
         run: |
           ORIGINAL_NAME=$(node -p "require('./package.json').name")
           npm pkg set name="@${{ github.repository_owner }}/gmol"
