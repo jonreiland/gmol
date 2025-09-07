@@ -1,6 +1,6 @@
 {
   "name": "gmol",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library for calcuating the molar mass of chemical compounds.",
   "homepage": "https://github.com/jonreiland/gmol#readme",
   "bugs": {
