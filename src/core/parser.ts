@@ -69,14 +69,13 @@ function parseSequence(
         );
       }
       if (next.t === "ELEMENT") {
-        idx.i++;
-        const el = next.v;
-        let mult = 1;
-        if (tokens[idx.i]?.t === "NUMBER") {
-          mult = (tokens[idx.i] as any).v;
-          idx.i++;
+        const inner = parseSequence(tokens, idx, stopOn);
+        if (!Object.keys(inner).length) {
+          throw new Error(
+            `Coefficient ${coeff} must precede an element or group`
+          );
         }
-        out[el] = (out[el] ?? 0) + coeff * mult;
+        mergeCounts(out, inner, coeff);
         continue;
       }
       if (next.t === "LP") {
